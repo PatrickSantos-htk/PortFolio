@@ -4,7 +4,9 @@ import { HeaderContainer, Lang, Logo, Nav, RightSide } from './style';
 export function Header() {
     return (
         <HeaderContainer>
-            <Logo>Patrick</Logo>
+            <Logo>
+                US <span>English</span>
+            </Logo>
 
             <RightSide>
                 <Nav>
@@ -14,11 +16,7 @@ export function Header() {
                     <a href="#contact">Contact</a>
                 </Nav>
 
-                {/* Flag estática */}
-                <Lang>
-                    <img src="/us-flag.png" alt="US Flag" />
-                    EN
-                </Lang>
+
             </RightSide>
         </HeaderContainer>
     );

@@ -14,10 +14,16 @@ export const HeaderContainer = styled.header`
   backdrop-filter: blur(10px);
 `;
 
-export const Logo = styled.h1`
-  font-size: 1.2rem;
+export const Logo = styled.div`
+  font-size: 14px;
   font-weight: bold;
-  color: ${({ theme }) => theme.colors.primary};
+  color: #fff;
+
+  span {
+    font-weight: normal;
+    margin-left: 5px;
+    opacity: 0.7;
+  }
 `;
 
 export const Nav = styled.nav`
