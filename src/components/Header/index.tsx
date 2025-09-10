@@ -1,4 +1,4 @@
-import { HeaderContainer, Lang, Logo, Nav, RightSide } from './style';
+import { HeaderContainer, Logo, Nav, RightSide } from './style';
 
 
 export function Header() {
