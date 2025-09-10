@@ -6,7 +6,7 @@ export function About() {
     return (
         <AboutContainer >
             <div>
-                <Text>
+                <Text id="skills">
                     Hi, I’m <Highlight>Patrick</Highlight> 👋
                     <br />
                     A passionate <Highlight>Fullstack Developer</Highlight> who loves building
@@ -16,7 +16,7 @@ export function About() {
                 </Text>
                 <Title>Skills</Title>
 
-                <TechList id="skills">
+                <TechList >
                     <Tech><FaReact size={20} /> React</Tech>
                     <Tech><FaVuejs size={20} /> Vue.js</Tech>
                     <Tech><FaNodeJs size={20} /> Node.js</Tech>
