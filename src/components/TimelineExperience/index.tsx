@@ -1,5 +1,6 @@
 import React from 'react';
 import { TimelineContainer, Timeline, TimelineItem, TimelineContent, TimelineDot, TimelineDate, TimelineTitle, TimelineCompany, TimelineDescription } from './style';
+import { TimelineTooltip } from './style';
 
 const experiences = [
     {
@@ -23,11 +24,22 @@ const TimelineExperience: React.FC = () => (
             {experiences.map((exp, idx) => (
                 <TimelineItem key={idx}>
                     <TimelineDot />
-                    <TimelineContent>
+                                        <TimelineContent
+                                                onMouseEnter={(e: React.MouseEvent<HTMLDivElement>) => {
+                                                    const tooltip = e.currentTarget.querySelector('.timeline-tooltip');
+                                                    if (tooltip) tooltip.classList.add('visible');
+                                                }}
+                                                onMouseLeave={(e: React.MouseEvent<HTMLDivElement>) => {
+                                                    const tooltip = e.currentTarget.querySelector('.timeline-tooltip');
+                                                    if (tooltip) tooltip.classList.remove('visible');
+                                                }}
+                                        >
                         <TimelineDate>{exp.date}</TimelineDate>
                         <TimelineTitle>{exp.title}</TimelineTitle>
                         <TimelineCompany>{exp.company}</TimelineCompany>
-                        <TimelineDescription>{exp.description}</TimelineDescription>
+                        <TimelineTooltip className="timeline-tooltip">
+                            {exp.description}
+                        </TimelineTooltip>
                     </TimelineContent>
                 </TimelineItem>
             ))}
