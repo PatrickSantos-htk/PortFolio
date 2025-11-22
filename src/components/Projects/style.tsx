@@ -8,7 +8,8 @@ export const Card = styled.div`
   display: flex;
   flex-direction: column;
   transition: 0.3s;
-  max-width: 30%;
+  margin: 0 auto;
+  
   &:hover {
     transform: translateY(-5px);
     box-shadow: 0px 6px 20px  #00c3ff;
@@ -17,7 +18,7 @@ export const Card = styled.div`
 
 export const CardImage = styled.img`
   width: 100%;
-  height: 200px;
+  height: 160px;
   object-fit: cover;
 `;
 

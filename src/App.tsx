@@ -1,5 +1,3 @@
-
-
 import { Header } from './components/Header'
 import { ThemeProvider } from "styled-components";
 import { theme } from "./theme/theme";
@@ -8,6 +6,8 @@ import { GlobalStyle } from './styles/global';
 import { About } from './components/About';
 import { Projects, } from './components/Projects';
 import { Contact } from './components/Contact';
+import Experience from './components/Experience';
+import TimelineExperience from './components/TimelineExperience';
 
 
 interface ProjectProps {
@@ -36,6 +36,7 @@ export function App() {
         <GlobalStyle />
         <Header />
         <Hero />
+        <TimelineExperience />
         <About />
 
         <div style={{ display: 'flex', gap: '2rem', padding: '2rem' }}>
@@ -44,9 +45,7 @@ export function App() {
 
 
           <Projects {...myFirstProject}
-            title='teste 1'
-            description='teste 1'
-            techs={["JavaScript"]} />
+          />
 
 
           <Projects {...myFirstProject} />
