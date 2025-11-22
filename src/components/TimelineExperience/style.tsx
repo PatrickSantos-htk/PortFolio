@@ -109,7 +109,7 @@ export const TimelineTooltip = styled.div`
   font-size: 0.98em;
   box-shadow: 0px 8px 24px rgba(0,0,0,0.18);
   z-index: 10;
-  transition: opacity 0.35s cubic-bezier(.4,0,.2,1), visibility 0.35s, transform 0.35s cubic-bezier(.4,0,.2,1);
+  transition: opacity 1s cubic-bezier(.4,0,.2,1), visibility 1s, transform 1s cubic-bezier(.4,0,.2,1);
   text-align: left;
   font-family: ${({ theme }) => theme.fonts.main || 'sans-serif'};
 

@@ -24,16 +24,16 @@ const TimelineExperience: React.FC = () => (
             {experiences.map((exp, idx) => (
                 <TimelineItem key={idx}>
                     <TimelineDot />
-                                        <TimelineContent
-                                                onMouseEnter={(e: React.MouseEvent<HTMLDivElement>) => {
-                                                    const tooltip = e.currentTarget.querySelector('.timeline-tooltip');
-                                                    if (tooltip) tooltip.classList.add('visible');
-                                                }}
-                                                onMouseLeave={(e: React.MouseEvent<HTMLDivElement>) => {
-                                                    const tooltip = e.currentTarget.querySelector('.timeline-tooltip');
-                                                    if (tooltip) tooltip.classList.remove('visible');
-                                                }}
-                                        >
+                    <TimelineContent
+                        onMouseEnter={(e: React.MouseEvent<HTMLDivElement>) => {
+                            const tooltip = e.currentTarget.querySelector('.timeline-tooltip');
+                            if (tooltip) tooltip.classList.add('visible');
+                        }}
+                        onMouseLeave={(e: React.MouseEvent<HTMLDivElement>) => {
+                            const tooltip = e.currentTarget.querySelector('.timeline-tooltip');
+                            if (tooltip) tooltip.classList.remove('visible');
+                        }}
+                    >
                         <TimelineDate>{exp.date}</TimelineDate>
                         <TimelineTitle>{exp.title}</TimelineTitle>
                         <TimelineCompany>{exp.company}</TimelineCompany>
