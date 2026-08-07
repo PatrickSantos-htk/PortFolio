@@ -1,86 +1,112 @@
-import styled from 'styled-components';
+import styled from "styled-components";
+import { Section } from "../../styles/global";
 
-export const ExperienceContainer = styled.section`
-  width: 100%;
-  padding: 40px 0;
-  background: transparent;
+export const ExperienceContainer = styled(Section)``;
 
-  h2 {
-    margin-bottom: 32px;
-    font-size: 2rem;
-    color: #333;
-    text-align: center;
-  }
-`;
-
-export const ExperienceList = styled.div`
+export const Timeline = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 20px;
 `;
 
-export const ExperienceCard = styled.div`
-  background: #fff;
-  padding: 20px;
-  border-left: 5px solid #333;
+export const Commit = styled.div`
+  display: flex;
+  gap: 1.5rem;
+  padding-bottom: 2.5rem;
+
+  &:last-child {
+    padding-bottom: 0;
+  }
+`;
+
+export const CommitLine = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+
+  .rail {
+    flex: 1;
+    width: 2px;
+    background: ${({ theme }) => theme.colors.border};
+    margin-top: 0.4rem;
+  }
+`;
+
+export const CommitHash = styled.span`
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: ${({ theme }) => theme.colors.primary};
+  background: ${({ theme }) => theme.colors.card};
+  border: 1px solid ${({ theme }) => theme.colors.primary};
+  box-shadow: 0 0 12px ${({ theme }) => theme.colors.primary}33;
+  flex-shrink: 0;
+`;
+
+export const CommitHeader = styled.div`
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+`;
+
+export const CommitBranch = styled.span`
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: ${({ theme }) => theme.colors.secondary};
+  background: ${({ theme }) => theme.colors.card};
+  border: 1px solid ${({ theme }) => theme.colors.border};
+  padding: 0.2rem 0.55rem;
+  border-radius: 4px;
+
+  &::before {
+    content: "⎇ ";
+  }
+`;
+
+export const CommitDate = styled.span`
+  font-size: 0.8rem;
+  color: ${({ theme }) => theme.colors.textMuted};
+`;
+
+export const CommitRole = styled.h3`
+  font-size: 1.1rem;
+  color: ${({ theme }) => theme.colors.text};
+  margin: 0.6rem 0 0.15rem;
+`;
+
+export const CommitCompany = styled.span`
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: ${({ theme }) => theme.colors.primary};
+  margin-bottom: 0.9rem;
+`;
+
+export const Diff = styled.ul`
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+`;
+
+export const DiffLine = styled.li`
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: ${({ theme }) => theme.colors.textMuted};
+  padding-left: 1.1rem;
   position: relative;
-  cursor: pointer;
-  transition: 0.3s;
-  width: 100%;
 
-  &:hover {
-    background-color: #f9f9f9;
-  }
-`;
-
-export const ExperienceTitle = styled.h3`
-  margin: 5px 0;
-  color: #333;
-`;
-
-export const ExperienceDate = styled.span`
-  font-size: 0.9em;
-  color: #666;
-  display: block;
-`;
-
-export const ExperienceCompany = styled.span`
-  font-size: 0.9em;
-  color: #666;
-  display: block;
-`;
-
-export const Tooltip = styled.span`
-  visibility: hidden;
-  width: 300px;
-  background-color: #222;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 10px;
-  position: absolute;
-  z-index: 1;
-  bottom: 80%;
-  left: 50%;
-  margin-left: -150px;
-  opacity: 0;
-  transition: opacity 0.3s;
-  font-size: 0.9em;
-  box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
-
-  &::after {
-    content: "";
+  &::before {
+    content: "+";
     position: absolute;
-    top: 100%;
-    left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: #222 transparent transparent transparent;
-  }
-
-  ${ExperienceCard}:hover & {
-    visibility: visible;
-    opacity: 1;
+    left: 0;
+    color: ${({ theme }) => theme.colors.secondary};
+    font-weight: 700;
   }
 `;

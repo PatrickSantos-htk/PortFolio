@@ -1,42 +1,60 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const blink = keyframes`
+  0%, 50% { opacity: 1; }
+  50.01%, 100% { opacity: 0; }
+`;
 
 export const HeaderContainer = styled.header`
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 1rem 8%;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 1000;
-  background: rgba(0, 0, 0, 0.85);
+  background: rgba(10, 10, 10, 0.8);
   backdrop-filter: blur(10px);
+  border-bottom: 1px solid ${({ theme }) => theme.colors.border};
+
+  @media (max-width: 768px) {
+    padding: 1rem 6%;
+  }
 `;
 
-export const Logo = styled.div`
-  font-size: 14px;
-  font-weight: bold;
-  color: #fff;
+export const Logo = styled.a`
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: ${({ theme }) => theme.colors.text};
+  display: flex;
+  align-items: center;
 
   span {
-    font-weight: normal;
-    margin-left: 5px;
-    opacity: 0.7;
+    color: ${({ theme }) => theme.colors.primary};
   }
+`;
+
+export const Cursor = styled.span`
+  color: ${({ theme }) => theme.colors.primary};
+  margin-left: 2px;
+  animation: ${blink} 1s step-end infinite;
 `;
 
 export const Nav = styled.nav`
   display: flex;
-  text-decoration: none; 
-  gap: 2rem;
+  gap: 1.75rem;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 
   a {
-    font-size: 0.9rem;
-    font-weight: bold;
-    color: ${({ theme }) => theme.colors.text};
-    transition: color 0.3s;
-    text-decoration: none; 
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: ${({ theme }) => theme.colors.textMuted};
+    transition: color 0.2s;
 
     &:hover {
       color: ${({ theme }) => theme.colors.primary};
@@ -44,24 +62,22 @@ export const Nav = styled.nav`
   }
 `;
 
-export const RightSide = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-`;
-
-export const Lang = styled.div`
+export const Status = styled.div`
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  font-size: 0.9rem;
-  font-weight: bold;
-  color: ${({ theme }) => theme.colors.text};
-  cursor: pointer;
+  font-size: 0.8rem;
+  color: ${({ theme }) => theme.colors.textMuted};
 
-  img {
-    width: 20px;
-    height: 20px;
-    border-radius: 3px;
+  @media (max-width: 480px) {
+    display: none;
+  }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: ${({ theme }) => theme.colors.secondary};
+    box-shadow: 0 0 8px ${({ theme }) => theme.colors.secondary};
   }
 `;

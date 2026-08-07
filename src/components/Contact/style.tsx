@@ -1,34 +1,58 @@
 import styled from "styled-components";
+import { Section } from "../../styles/global";
 
-export const ContactContainer = styled.section`
-  padding: 4rem 2rem;
-  text-align: center;
-  background: ${({ theme }) => theme.colors.background};
+export const ContactContainer = styled(Section)`
+  background: ${({ theme }) => theme.colors.backgroundAlt};
 `;
 
-export const ContactTitle = styled.h2`
-  font-size: 2rem;
-  margin-bottom: 2rem;
-  color: ${({ theme }) => theme.colors.primary};
+export const Intro = styled.p`
+  font-size: 1rem;
+  color: ${({ theme }) => theme.colors.textMuted};
+  margin-bottom: 2.5rem;
 `;
 
-export const ContactLinks = styled.div`
+export const ContactList = styled.div`
   display: flex;
-  justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 0.6rem;
 `;
 
 export const ContactLink = styled.a`
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  font-size: 1.2rem;
-  text-decoration: none;
+  gap: 0.75rem;
+  padding: 0.9rem 1.1rem;
+  border: 1px solid ${({ theme }) => theme.colors.border};
+  border-radius: 8px;
   color: ${({ theme }) => theme.colors.text};
-  transition: color 0.3s ease;
+  font-size: 0.95rem;
+  transition: border-color 0.2s, color 0.2s;
+  flex-wrap: wrap;
+
+  svg {
+    color: ${({ theme }) => theme.colors.primary};
+    flex-shrink: 0;
+  }
 
   &:hover {
+    border-color: ${({ theme }) => theme.colors.primary};
     color: ${({ theme }) => theme.colors.primary};
+
+    svg {
+      color: ${({ theme }) => theme.colors.secondary};
+    }
   }
+`;
+
+export const Prompt = styled.span`
+  color: ${({ theme }) => theme.colors.textMuted};
+  font-size: 0.85rem;
+  min-width: 130px;
+`;
+
+export const Footer = styled.p`
+  margin-top: 3rem;
+  font-size: 0.8rem;
+  color: ${({ theme }) => theme.colors.textMuted};
+  text-align: center;
 `;

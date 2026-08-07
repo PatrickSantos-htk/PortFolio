@@ -1,28 +1,65 @@
 import { FaGithub, FaLinkedin, FaEnvelope, FaWhatsapp } from "react-icons/fa";
-import { ContactContainer, ContactTitle, ContactLinks, ContactLink } from "./style";
+import { SectionHeading } from "../../styles/global";
+import {
+    ContactContainer,
+    Intro,
+    ContactList,
+    ContactLink,
+    Prompt,
+    Footer,
+} from "./style";
+
+const links = [
+    {
+        icon: <FaEnvelope size={18} />,
+        command: "--email",
+        label: "patricksantosribeiro2017@gmail.com",
+        href: "mailto:patricksantosribeiro2017@gmail.com",
+    },
+    {
+        icon: <FaWhatsapp size={18} />,
+        command: "--whatsapp",
+        label: "(21) 97367-5618",
+        href: "https://wa.me/5521973675618",
+    },
+    {
+        icon: <FaLinkedin size={18} />,
+        command: "--linkedin",
+        label: "linkedin.com/in/patrick-santos-162899207",
+        href: "https://www.linkedin.com/in/patrick-santos-162899207/",
+    },
+    {
+        icon: <FaGithub size={18} />,
+        command: "--github",
+        label: "github.com/PatrickSantos-htk",
+        href: "https://github.com/PatrickSantos-htk",
+    },
+];
 
 export function Contact() {
     return (
         <ContactContainer id="contact">
-            <ContactTitle>Contact</ContactTitle>
+            <SectionHeading index="05">contato()</SectionHeading>
+            <Intro>
+                Disponível para novas oportunidades e projetos freelancer. Rio de Janeiro, RJ.
+            </Intro>
 
-            <ContactLinks>
-                <ContactLink href="mailto:seuemail@gmail.com" target="_blank" rel="noopener noreferrer">
-                    <FaEnvelope size={28} /> Email
-                </ContactLink>
+            <ContactList>
+                {links.map((link) => (
+                    <ContactLink
+                        key={link.command}
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <Prompt>$ contact {link.command}</Prompt>
+                        {link.icon}
+                        {link.label}
+                    </ContactLink>
+                ))}
+            </ContactList>
 
-                <ContactLink href="https://github.com/seuusuario" target="_blank" rel="noopener noreferrer">
-                    <FaGithub size={28} /> GitHub
-                </ContactLink>
-
-                <ContactLink href="https://www.linkedin.com/in/seuusuario/" target="_blank" rel="noopener noreferrer">
-                    <FaLinkedin size={28} /> LinkedIn
-                </ContactLink>
-
-                <ContactLink href="https://wa.me/5599999999999" target="_blank" rel="noopener noreferrer">
-                    <FaWhatsapp size={28} /> WhatsApp
-                </ContactLink>
-            </ContactLinks>
+            <Footer>Patrick Santos Ribeiro © {new Date().getFullYear()}</Footer>
         </ContactContainer>
     );
 }
