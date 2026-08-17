@@ -11,8 +11,6 @@ import {
     CardDescription,
     TagList,
     Tag,
-    Footer,
-    FooterButton,
 } from "./style";
 
 const services = [
@@ -45,12 +43,8 @@ const services = [
 export function Services() {
     return (
         <ServicesContainer id="servicos">
-            <SectionHeading index="04">servicos()</SectionHeading>
-            <Intro>
-                Através da <strong>Selintech</strong>, minha empresa de desenvolvimento
-                freelancer, entrego projetos de ponta a ponta para clientes de diferentes
-                nichos.
-            </Intro>
+            <SectionHeading index="05">servicos()</SectionHeading>
+            <Intro>O que a Selintech entrega para os clientes:</Intro>
 
             <Grid>
                 {services.map((service) => (
@@ -69,11 +63,6 @@ export function Services() {
                     </Card>
                 ))}
             </Grid>
-
-            <Footer>
-                Tem um projeto em mente?
-                <FooterButton href="#contact">Vamos conversar →</FooterButton>
-            </Footer>
         </ServicesContainer>
     );
 }

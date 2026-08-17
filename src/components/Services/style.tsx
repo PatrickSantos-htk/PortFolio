@@ -1,7 +1,9 @@
 import styled from "styled-components";
 import { Section } from "../../styles/global";
 
-export const ServicesContainer = styled(Section)``;
+export const ServicesContainer = styled(Section)`
+  background: ${({ theme }) => theme.colors.backgroundAlt};
+`;
 
 export const Intro = styled.p`
   max-width: 640px;
@@ -79,24 +81,4 @@ export const Tag = styled.span`
   border: 1px solid ${({ theme }) => theme.colors.border};
   padding: 0.3rem 0.6rem;
   border-radius: 5px;
-`;
-
-export const Footer = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-top: 3rem;
-  font-size: 0.95rem;
-  color: ${({ theme }) => theme.colors.textMuted};
-  flex-wrap: wrap;
-`;
-
-export const FooterButton = styled.a`
-  font-weight: 600;
-  color: ${({ theme }) => theme.colors.primary};
-  transition: opacity 0.2s;
-
-  &:hover {
-    opacity: 0.75;
-  }
 `;

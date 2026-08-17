@@ -39,7 +39,7 @@ const links = [
 export function Contact() {
     return (
         <ContactContainer id="contact">
-            <SectionHeading index="05">contato()</SectionHeading>
+            <SectionHeading index="06">contato()</SectionHeading>
             <Intro>
                 Disponível para novas oportunidades e projetos freelancer. Rio de Janeiro, RJ.
             </Intro>

@@ -1,4 +1,5 @@
 import { SectionHeading } from "../../styles/global";
+import { techIcons } from "../../utils/techIcons";
 import {
     EducationContainer,
     Grid,
@@ -78,7 +79,10 @@ export function Education() {
                             <CourseGroupTitle>{group.platform}</CourseGroupTitle>
                             <CourseTags>
                                 {group.courses.map((course) => (
-                                    <CourseTag key={course}>{course}</CourseTag>
+                                    <CourseTag key={course}>
+                                        {techIcons[course]}
+                                        {course}
+                                    </CourseTag>
                                 ))}
                             </CourseTags>
                         </CourseGroup>

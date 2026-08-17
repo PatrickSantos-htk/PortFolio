@@ -92,6 +92,9 @@ export const CourseTags = styled.div`
 `;
 
 export const CourseTag = styled.span`
+  display: flex;
+  align-items: center;
+  gap: 6px;
   font-size: 0.8rem;
   color: ${({ theme }) => theme.colors.textMuted};
   background: ${({ theme }) => theme.colors.card};
@@ -99,6 +102,11 @@ export const CourseTag = styled.span`
   padding: 0.35rem 0.7rem;
   border-radius: 5px;
   transition: border-color 0.2s, color 0.2s, transform 0.2s;
+
+  svg {
+    color: ${({ theme }) => theme.colors.primary};
+    flex-shrink: 0;
+  }
 
   &:hover {
     border-color: ${({ theme }) => theme.colors.primary};
