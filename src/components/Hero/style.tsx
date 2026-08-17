@@ -89,6 +89,9 @@ export const PrimaryButton = styled.a`
 `;
 
 export const SecondaryButton = styled.a`
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
   padding: 0.85rem 1.6rem;
   border-radius: 6px;
   font-weight: 600;

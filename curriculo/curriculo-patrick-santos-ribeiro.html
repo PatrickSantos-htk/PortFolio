@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<title>Curriculo - Patrick Santos Ribeiro</title>
+<style>
+  @page {
+    size: A4;
+    margin: 1.8cm;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: Arial, Helvetica, "Liberation Sans", sans-serif;
+    font-size: 10.5pt;
+    line-height: 1.32;
+    color: #111111;
+    background: #ffffff;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 1.5rem 1.5rem;
+  }
+
+  h1 {
+    font-size: 20pt;
+    font-weight: 700;
+    margin-bottom: 2pt;
+  }
+
+  .title {
+    font-size: 12.5pt;
+    font-weight: 700;
+    margin-bottom: 6pt;
+  }
+
+  .contact {
+    font-size: 9.5pt;
+    margin-bottom: 12pt;
+  }
+
+  .contact span {
+    white-space: nowrap;
+  }
+
+  .contact span:not(:last-child)::after {
+    content: " \00a0|\00a0 ";
+  }
+
+  h2 {
+    font-size: 11.5pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    border-bottom: 1pt solid #111111;
+    padding-bottom: 2pt;
+    margin-top: 11pt;
+    margin-bottom: 6pt;
+  }
+
+  section:first-of-type h2 {
+    margin-top: 0;
+  }
+
+  p {
+    margin-bottom: 6pt;
+    text-align: justify;
+  }
+
+  .entry {
+    margin-bottom: 7pt;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .entry:last-child {
+    margin-bottom: 0;
+  }
+
+  .entry-role {
+    font-weight: 700;
+    font-size: 10.5pt;
+  }
+
+  .entry-period {
+    display: block;
+    font-size: 9.5pt;
+    font-style: italic;
+    margin-bottom: 2pt;
+  }
+
+  ul {
+    list-style: none;
+    margin-top: 2pt;
+  }
+
+  li {
+    padding-left: 12pt;
+    position: relative;
+    margin-bottom: 1pt;
+    font-size: 10pt;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  li::before {
+    content: "\2022";
+    position: absolute;
+    left: 0;
+  }
+
+  .skills-line {
+    margin-bottom: 5pt;
+    font-size: 10.5pt;
+  }
+
+  .skills-line strong {
+    font-weight: 700;
+  }
+
+  .project-title {
+    font-weight: 700;
+    font-size: 10.5pt;
+  }
+
+  .project-desc {
+    font-size: 10.5pt;
+    margin-bottom: 8pt;
+  }
+
+  .project-desc:last-child {
+    margin-bottom: 0;
+  }
+
+  .print-bar {
+    max-width: 720px;
+    margin: 0 auto 1rem;
+    padding: 0 1.5rem;
+  }
+
+  .print-bar button {
+    font-family: Arial, sans-serif;
+    font-size: 11pt;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+  }
+
+  @media print {
+    .print-bar {
+      display: none;
+    }
+    body {
+      padding: 0;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="print-bar">
+  <button onclick="window.print()">Imprimir / Salvar como PDF</button>
+</div>
+
+<header>
+  <h1>Patrick Santos Ribeiro</h1>
+  <div class="title">Desenvolvedor Full Stack</div>
+  <div class="contact">
+    <span>Rio de Janeiro, RJ</span>
+    <span>(21) 97367-5618</span>
+    <span>patricksantosribeiro2017@gmail.com</span>
+    <span>linkedin.com/in/patrick-santos-162899207</span>
+    <span>github.com/PatrickSantos-htk</span>
+  </div>
+</header>
+
+<section>
+  <h2>Resumo Profissional</h2>
+  <p>
+    Desenvolvedor focado no ecossistema JavaScript e TypeScript, com forte domínio em React.js
+    e na criação de interfaces web modernas e escaláveis. Além da especialidade em front-end,
+    atuo de forma multidisciplinar com Node.js (NestJS), engenharia de dados (Data Lake, Python,
+    SQL) e na criação de agentes de Inteligência Artificial para automatizar fluxos operacionais.
+    Através da minha empresa, a Selintech, desenvolvo e-commerces e sistemas personalizados de
+    ponta a ponta como freelancer. Busco oportunidades onde possa liderar entregas em React e
+    utilizar minha versatilidade tecnológica para gerar impacto direto no negócio.
+  </p>
+</section>
+
+<section>
+  <h2>Habilidades Técnicas</h2>
+  <div class="skills-line"><strong>Especialidade:</strong> JavaScript, TypeScript, React.js</div>
+  <div class="skills-line"><strong>Ecossistema Web &amp; Back-end:</strong> HTML5/CSS3, Angular, Vue.js, Node.js, NestJS, GraphQL, REST APIs</div>
+  <div class="skills-line"><strong>Dados &amp; IA Aplicados:</strong> Python, SQL, MongoDB, Data Lake, Agentes de IA, Cypress (E2E), ADVPL (Protheus)</div>
+</section>
+
+<section>
+  <h2>Experiência Profissional</h2>
+
+  <div class="entry">
+    <div class="entry-role">Desenvolvedor de Software (Estágio) — Haytek</div>
+    <span class="entry-period">Agosto/2025 - Presente</span>
+    <ul>
+      <li>Desenvolvimento de soluções web com foco no cliente final, priorizando interfaces dinâmicas, responsivas e performáticas com React.js, JavaScript e Angular.</li>
+      <li>Construção e manutenção de APIs RESTful com NestJS (Node.js) e TypeScript, integrando front-end e banco de dados.</li>
+      <li>Desenvolvimento de agentes de Inteligência Artificial para automação de processos operacionais internos.</li>
+      <li>Apoio à equipe de Data Lake com scripts em Python e consultas SQL para estruturação e análise de dados.</li>
+      <li>Integração com bancos de dados relacionais (SQL) e não-relacionais (MongoDB), além de integrações com o ERP Protheus via ADVPL.</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="entry-role">Desenvolvedor Full Stack (Freelancer / Fundador) — Selintech</div>
+    <span class="entry-period">Março/2026 - Presente</span>
+    <ul>
+      <li>Desenvolvimento de landing pages de alta conversão e performance, focadas em UX/UI e boas práticas de SEO.</li>
+      <li>Criação e implementação de plataformas completas de e-commerce, com integrações de meios de pagamento e sistemas de gestão.</li>
+      <li>Prospecção e projeto de sistemas personalizados sob demanda: levantamento de requisitos, arquitetura front/back-end e deploy final.</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="entry-role">Desenvolvedor Full Stack (Estágio) — Jovens Gênios</div>
+    <span class="entry-period">Outubro/2023 - Julho/2024</span>
+    <ul>
+      <li>Desenvolvimento de funcionalidades em React.js e Vue.js para plataformas educacionais gamificadas.</li>
+      <li>Implementação de testes automatizados de ponta a ponta (E2E) com Cypress, reduzindo a incidência de bugs em produção.</li>
+      <li>Manutenção de APIs com Node.js e GraphQL, otimizando o tempo de resposta das consultas e corrigindo bugs críticos.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Projetos</h2>
+
+  <div class="project-desc">
+    <span class="project-title">BarberSaaS</span> - Plataforma multi-tenant de gestão para barbearias (agenda, clientes, financeiro), com cobrança via WhatsApp e assinatura recorrente via Asaas. Next.js, TypeScript, Supabase. barber-selintech.vercel.app
+  </div>
+  <div class="project-desc">
+    <span class="project-title">Catálogo Comercial (Reino das Soleiras)</span> - E-commerce de serviços com vitrine pública e painel administrativo (CRUD, upload de imagens, autenticação). React, TypeScript, Supabase. reidassoleira.vercel.app
+  </div>
+</section>
+
+<section>
+  <h2>Educação Acadêmica</h2>
+  <div class="entry">
+    <div class="entry-role">Ciência da Computação (Bacharelado)</div>
+    <span class="entry-period">Out/2025 - Prev. Dez/2027 (Cursando)</span>
+  </div>
+  <div class="entry">
+    <div class="entry-role">Engenharia de Software (Pós-graduação)</div>
+    <span class="entry-period">Dez/2025 - Prev. Dez/2026 (Cursando)</span>
+  </div>
+  <div class="entry">
+    <div class="entry-role">Análise e Desenvolvimento de Sistemas (Tecnólogo)</div>
+    <span class="entry-period">Concluído em Out/2025</span>
+  </div>
+</section>
+
+<section>
+  <h2>Cursos Complementares</h2>
+  <div class="skills-line"><strong>Alura:</strong> JavaScript, React.js, Node.js, NestJS, Vue.js, HTML5 &amp; CSS3</div>
+  <div class="skills-line"><strong>Descomplica:</strong> Arquitetura de Computadores, DB Developer, Fundamentos de Programação, POO</div>
+</section>
+
+<section>
+  <h2>Idiomas</h2>
+  <div class="skills-line"><strong>Inglês:</strong> Intermediário / Técnico (leitura fluente de documentação)</div>
+  <div class="skills-line"><strong>Espanhol:</strong> Básico</div>
+</section>
+
+</body>
+</html>

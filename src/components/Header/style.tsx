@@ -7,14 +7,18 @@ const blink = keyframes`
 
 export const HeaderContainer = styled.header`
   width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 8%;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 1000;
+`;
+
+export const Bar = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 8%;
   background: rgba(10, 10, 10, 0.8);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid ${({ theme }) => theme.colors.border};
@@ -69,7 +73,7 @@ export const Status = styled.div`
   font-size: 0.8rem;
   color: ${({ theme }) => theme.colors.textMuted};
 
-  @media (max-width: 480px) {
+  @media (max-width: 768px) {
     display: none;
   }
 
@@ -79,5 +83,50 @@ export const Status = styled.div`
     border-radius: 50%;
     background: ${({ theme }) => theme.colors.secondary};
     box-shadow: 0 0 8px ${({ theme }) => theme.colors.secondary};
+  }
+`;
+
+export const MenuButton = styled.button`
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  color: ${({ theme }) => theme.colors.text};
+  cursor: pointer;
+  padding: 0.4rem;
+
+  @media (max-width: 768px) {
+    display: flex;
+  }
+`;
+
+export const MobileMenu = styled.nav<{ $open: boolean }>`
+  display: none;
+
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 6rem 8% 2rem;
+    gap: 1.75rem;
+    background: ${({ theme }) => theme.colors.background};
+    transform: translateX(${({ $open }) => ($open ? "0" : "100%")});
+    transition: transform 0.25s ease;
+    z-index: 999;
+
+    a {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: ${({ theme }) => theme.colors.text};
+
+      &:hover {
+        color: ${({ theme }) => theme.colors.primary};
+      }
+    }
   }
 `;

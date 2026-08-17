@@ -1,4 +1,5 @@
 import { ReactTyped } from "react-typed";
+import { FaDownload } from "react-icons/fa";
 import MinhaFoto from "../../assets/patrick-avatar.jpg";
 
 import {
@@ -45,6 +46,12 @@ export function Hero() {
 
                 <Actions>
                     <PrimaryButton href="#experiencia">Ver experiência</PrimaryButton>
+                    <SecondaryButton
+                        href="/curriculo-patrick-santos-ribeiro.pdf"
+                        download="Curriculo-Patrick-Santos-Ribeiro.pdf"
+                    >
+                        <FaDownload size={13} /> Baixar CV
+                    </SecondaryButton>
                     <SecondaryButton href="#contact">Falar comigo</SecondaryButton>
                 </Actions>
             </Left>
