@@ -2,11 +2,40 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8" />
-<title>Curriculo - Patrick Santos Ribeiro</title>
+<title>Currículo de Patrick Santos Ribeiro</title>
 <style>
+  :root {
+    --bg: #eef1f6;
+    --surface: #ffffff;
+    --text: #1b1f27;
+    --text-muted: #5b6472;
+    --accent: #2f5fd9;
+    --border: #d6dbe4;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #12141a;
+      --surface: #1b1e26;
+      --text: #e6e9f0;
+      --text-muted: #9aa2b1;
+      --accent: #6f9bff;
+      --border: #2a2e3a;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #12141a;
+    --surface: #1b1e26;
+    --text: #e6e9f0;
+    --text-muted: #9aa2b1;
+    --accent: #6f9bff;
+    --border: #2a2e3a;
+  }
+
   @page {
     size: A4;
-    margin: 1.8cm;
+    margin: 1.05cm;
   }
 
   * {
@@ -15,145 +44,234 @@
     box-sizing: border-box;
   }
 
-  body {
-    font-family: Arial, Helvetica, "Liberation Sans", sans-serif;
-    font-size: 10.5pt;
-    line-height: 1.32;
-    color: #111111;
-    background: #ffffff;
-    max-width: 720px;
-    margin: 0 auto;
-    padding: 1.5rem 1.5rem;
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      transition: none !important;
+    }
   }
 
-  h1 {
-    font-size: 20pt;
+  html, body {
+    background: var(--bg);
+  }
+
+  body {
+    font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--text);
+    min-height: 100vh;
+  }
+
+  .stage {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 1.25rem 3rem;
+  }
+
+  .topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.25rem;
+  }
+
+  .topbar-label {
+    font-family: ui-monospace, "SF Mono", "JetBrains Mono", monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.02em;
+    color: var(--text-muted);
+  }
+
+  .topbar-label strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  .print-btn {
+    font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #ffffff;
+    background: var(--accent);
+    border: none;
+    border-radius: 6px;
+    padding: 0.6rem 1.1rem;
+    cursor: pointer;
+    transition: opacity 0.15s ease;
+  }
+
+  .print-btn:hover {
+    opacity: 0.88;
+  }
+
+  .print-btn:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
+
+  .note {
+    max-width: 760px;
+    margin: 1rem auto 0;
+    font-size: 0.82rem;
+    line-height: 1.5;
+    color: var(--text-muted);
+  }
+
+  /* ---- .sheet: the résumé itself. Deliberately single-theme (white paper,
+     black text) at all times -- it must always look like the PDF a
+     recruiter will open, regardless of the viewer's theme. ---- */
+
+  .sheet {
+    background: #ffffff;
+    color: #111111;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 2rem 2.25rem;
+    border-radius: 4px;
+    border: 1px solid var(--border);
+    box-shadow: 0 12px 32px rgba(20, 22, 30, 0.16);
+    font-family: Arial, Helvetica, "Liberation Sans", sans-serif;
+    font-size: 10pt;
+    line-height: 1.14;
+  }
+
+  .sheet h1 {
+    font-size: 21pt;
     font-weight: 700;
+    letter-spacing: -0.01em;
+    color: #1f4faa;
     margin-bottom: 2pt;
   }
 
-  .title {
+  .sheet .title {
     font-size: 12.5pt;
     font-weight: 700;
+    color: #33404d;
     margin-bottom: 6pt;
   }
 
-  .contact {
-    font-size: 9.5pt;
-    margin-bottom: 12pt;
+  .sheet .contact {
+    font-size: 9pt;
+    color: #55606e;
+    margin-bottom: 8pt;
   }
 
-  .contact span {
+  .sheet .contact span {
     white-space: nowrap;
   }
 
-  .contact span:not(:last-child)::after {
+  .sheet .contact span:not(:last-child)::after {
     content: " \00a0|\00a0 ";
   }
 
-  h2 {
-    font-size: 11.5pt;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.02em;
-    border-bottom: 1pt solid #111111;
-    padding-bottom: 2pt;
-    margin-top: 11pt;
-    margin-bottom: 6pt;
+  .sheet .contact-link {
+    color: inherit;
+    text-decoration: none;
   }
 
-  section:first-of-type h2 {
+  .sheet .contact-link:hover {
+    text-decoration: underline;
+  }
+
+  .sheet .c-icon {
+    width: 8.5pt;
+    height: 8.5pt;
+    vertical-align: -1.3pt;
+    margin-right: 2.5pt;
+    fill: currentColor;
+  }
+
+  .sheet h2 {
+    font-size: 11pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #1f4faa;
+    border-bottom: 1.5pt solid #1f4faa;
+    padding-bottom: 1.5pt;
+    margin-top: 7pt;
+    margin-bottom: 3pt;
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  .sheet section:first-of-type h2 {
     margin-top: 0;
   }
 
-  p {
+  .sheet p {
     margin-bottom: 6pt;
     text-align: justify;
   }
 
-  .entry {
+  .sheet .entry {
     margin-bottom: 7pt;
     break-inside: avoid;
     page-break-inside: avoid;
   }
 
-  .entry:last-child {
+  .sheet .entry:last-child {
     margin-bottom: 0;
   }
 
-  .entry-role {
+  .sheet .entry-role {
     font-weight: 700;
     font-size: 10.5pt;
   }
 
-  .entry-period {
+  .sheet .entry-period {
     display: block;
-    font-size: 9.5pt;
+    font-size: 9pt;
     font-style: italic;
-    margin-bottom: 2pt;
+    color: #55606e;
+    margin-bottom: 4pt;
   }
 
-  ul {
-    list-style: none;
-    margin-top: 2pt;
+  .sheet .bullet-list {
+    margin-top: 3pt;
   }
 
-  li {
+  .sheet .bullet {
     padding-left: 12pt;
-    position: relative;
-    margin-bottom: 1pt;
-    font-size: 10pt;
+    text-indent: -12pt;
+    margin-bottom: 3.5pt;
+    font-size: 9.5pt;
+    line-height: 1.32;
     break-inside: avoid;
     page-break-inside: avoid;
   }
 
-  li::before {
-    content: "\2022";
-    position: absolute;
-    left: 0;
+  .sheet .skills-line {
+    margin-bottom: 4pt;
+    font-size: 10pt;
   }
 
-  .skills-line {
-    margin-bottom: 5pt;
-    font-size: 10.5pt;
-  }
-
-  .skills-line strong {
+  .sheet .skills-line strong {
     font-weight: 700;
-  }
-
-  .project-title {
-    font-weight: 700;
-    font-size: 10.5pt;
-  }
-
-  .project-desc {
-    font-size: 10.5pt;
-    margin-bottom: 8pt;
-  }
-
-  .project-desc:last-child {
-    margin-bottom: 0;
-  }
-
-  .print-bar {
-    max-width: 720px;
-    margin: 0 auto 1rem;
-    padding: 0 1.5rem;
-  }
-
-  .print-bar button {
-    font-family: Arial, sans-serif;
-    font-size: 11pt;
-    padding: 0.5rem 1rem;
-    cursor: pointer;
   }
 
   @media print {
-    .print-bar {
+    html, body {
+      background: #ffffff;
+    }
+
+    .topbar,
+    .note {
       display: none;
     }
-    body {
+
+    .stage {
+      max-width: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .sheet {
+      box-shadow: none;
+      border: none;
+      border-radius: 0;
+      max-width: none;
+      margin: 0;
       padding: 0;
     }
   }
@@ -161,116 +279,117 @@
 </head>
 <body>
 
-<div class="print-bar">
-  <button onclick="window.print()">Imprimir / Salvar como PDF</button>
-</div>
-
-<header>
-  <h1>Patrick Santos Ribeiro</h1>
-  <div class="title">Desenvolvedor Full Stack</div>
-  <div class="contact">
-    <span>Rio de Janeiro, RJ</span>
-    <span>(21) 97367-5618</span>
-    <span>patricksantosribeiro2017@gmail.com</span>
-    <span>linkedin.com/in/patrick-santos-162899207</span>
-    <span>github.com/PatrickSantos-htk</span>
+<div class="stage">
+  <div class="topbar">
+    <div class="topbar-label"><strong>Currículo</strong> · formato ATS, uma coluna</div>
+    <button class="print-btn" onclick="window.print()">Baixar PDF</button>
   </div>
-</header>
 
-<section>
-  <h2>Resumo Profissional</h2>
-  <p>
-    Desenvolvedor focado no ecossistema JavaScript e TypeScript, com forte domínio em React.js
-    e na criação de interfaces web modernas e escaláveis. Além da especialidade em front-end,
-    atuo de forma multidisciplinar com Node.js (NestJS), engenharia de dados (Data Lake, Python,
-    SQL) e na criação de agentes de Inteligência Artificial para automatizar fluxos operacionais.
-    Através da minha empresa, a Selintech, desenvolvo e-commerces e sistemas personalizados de
-    ponta a ponta como freelancer. Busco oportunidades onde possa liderar entregas em React e
-    utilizar minha versatilidade tecnológica para gerar impacto direto no negócio.
+  <div class="sheet">
+    <header>
+      <h1>Patrick Santos Ribeiro</h1>
+      <div class="title">Desenvolvedor Front-end &amp; Full Stack Júnior | React, JavaScript &amp; Node.js</div>
+      <div class="contact">
+        <span>Rio de Janeiro, RJ</span>
+        <span>(21) 97367-5618</span>
+        <span>patricksantosribeiro2017@gmail.com</span>
+        <span><a class="contact-link" href="https://www.linkedin.com/in/patrick-santos-162899207/" target="_blank" rel="noopener noreferrer"><svg class="c-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.114 20.452H3.558V9h3.556v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>linkedin.com/in/patrick-santos-162899207</a></span>
+        <span><a class="contact-link" href="https://github.com/PatrickSantos-htk" target="_blank" rel="noopener noreferrer"><svg class="c-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.084-.729.084-.729 1.205.084 1.838 1.237 1.838 1.237 1.07 1.834 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.303-5.466-1.332-5.466-5.93 0-1.31.468-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.955-.266 1.98-.399 3-.405 1.02.006 2.045.14 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.225.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>github.com/PatrickSantos-htk</a></span>
+        <span><a class="contact-link" href="https://patricksantosribeiro.vercel.app/" target="_blank" rel="noopener noreferrer"><svg class="c-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm6.93 6h-2.95c-.32-1.25-.78-2.45-1.38-3.56 1.84.63 3.37 1.9 4.33 3.56zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96zM4.26 14C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2s.06 1.34.14 2H4.26zm.82 2h2.95c.32 1.25.78 2.45 1.38 3.56A7.987 7.987 0 0 1 5.08 16zm2.95-8H5.08a7.987 7.987 0 0 1 4.33-3.56C8.81 5.55 8.35 6.75 8.03 8zM12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82c-.43 1.43-1.08 2.76-1.91 3.96zM14.34 14H9.66c-.09-.66-.16-1.32-.16-2s.07-1.35.16-2h4.68c.09.65.16 1.32.16 2s-.07 1.34-.16 2zm.25 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a7.987 7.987 0 0 1-4.33 3.56zM16.36 14c.08-.66.14-1.32.14-2s-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2h-3.38z"/></svg>patricksantosribeiro.vercel.app</a></span>
+      </div>
+    </header>
+
+    <section>
+      <h2>Resumo Profissional</h2>
+      <p>
+        Desenvolvedor Web Júnior com experiência em front-end e full-stack, focado em JavaScript,
+        TypeScript e React.js. Atuo também com Node.js (NestJS), APIs REST, versionamento
+        Git/GitHub e interfaces responsivas, além de engenharia de dados e agentes de Inteligência
+        Artificial. Através da Selintech, minha empresa, desenvolvo sites, e-commerces e sistemas
+        web personalizados como freelancer. Busco uma posição como desenvolvedor front-end ou
+        full-stack para aplicar minha versatilidade técnica e continuar evoluindo como
+        profissional.
+      </p>
+    </section>
+
+    <section>
+      <h2>Habilidades Técnicas</h2>
+      <div class="skills-line"><strong>Especialidade:</strong> JavaScript, TypeScript, React.js, HTML5, CSS3, Design Responsivo</div>
+      <div class="skills-line"><strong>Ecossistema Web &amp; Back-end:</strong> Angular, Vue.js, Node.js, NestJS, GraphQL, REST APIs, Git/GitHub</div>
+      <div class="skills-line"><strong>Dados &amp; IA Aplicados:</strong> Python, SQL, MongoDB, Data Lake, Agentes de IA, Cypress (E2E), ADVPL (Protheus)</div>
+    </section>
+
+    <section>
+      <h2>Experiência Profissional</h2>
+
+      <div class="entry">
+        <div class="entry-role">Desenvolvedor de Software (Estágio) — Haytek</div>
+        <span class="entry-period">Agosto/2025 - Presente</span>
+        <div class="bullet-list">
+          <div class="bullet">• Desenvolvimento de soluções web com foco no cliente final, priorizando interfaces dinâmicas, responsivas e performáticas com React.js, JavaScript e Angular.</div>
+          <div class="bullet">• Construção e manutenção de APIs RESTful com NestJS (Node.js) e TypeScript, integrando front-end e banco de dados.</div>
+          <div class="bullet">• Desenvolvimento de agentes de Inteligência Artificial para automação de processos operacionais internos.</div>
+          <div class="bullet">• Apoio à equipe de Data Lake com scripts em Python e consultas SQL para estruturação e análise de dados.</div>
+          <div class="bullet">• Integração com bancos de dados relacionais (SQL) e não-relacionais (MongoDB), além de integrações com o ERP Protheus via ADVPL.</div>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-role">Desenvolvedor Full Stack (Freelancer / Fundador) — Selintech</div>
+        <span class="entry-period">Março/2026 - Presente</span>
+        <div class="bullet-list">
+          <div class="bullet">• Desenvolvimento de landing pages de alta conversão e performance, focadas em UX/UI e boas práticas de SEO.</div>
+          <div class="bullet">• Criação e implementação de plataformas completas de e-commerce, com integrações de meios de pagamento e sistemas de gestão.</div>
+          <div class="bullet">• Prospecção e projeto de sistemas personalizados sob demanda: levantamento de requisitos, arquitetura front/back-end e deploy final.</div>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-role">Desenvolvedor Full Stack (Estágio) — Jovens Gênios</div>
+        <span class="entry-period">Outubro/2023 - Julho/2024</span>
+        <div class="bullet-list">
+          <div class="bullet">• Desenvolvimento de funcionalidades em React.js e Vue.js para plataformas educacionais gamificadas.</div>
+          <div class="bullet">• Implementação de testes automatizados de ponta a ponta (E2E) com Cypress, reduzindo a incidência de bugs em produção.</div>
+          <div class="bullet">• Manutenção de APIs com Node.js e GraphQL, otimizando o tempo de resposta das consultas e corrigindo bugs críticos.</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Educação Acadêmica</h2>
+      <div class="entry">
+        <div class="entry-role">Ciência da Computação (Bacharelado)</div>
+        <span class="entry-period">Out/2025 - Prev. Dez/2027 (Cursando)</span>
+      </div>
+      <div class="entry">
+        <div class="entry-role">Engenharia de Software (Pós-graduação)</div>
+        <span class="entry-period">Dez/2025 - Prev. Dez/2026 (Cursando)</span>
+      </div>
+      <div class="entry">
+        <div class="entry-role">Análise e Desenvolvimento de Sistemas (Tecnólogo)</div>
+        <span class="entry-period">Concluído em Out/2025</span>
+      </div>
+    </section>
+
+    <section>
+      <h2>Cursos Complementares</h2>
+      <div class="skills-line"><strong>Alura:</strong> JavaScript, React.js, Node.js, NestJS, Vue.js, HTML5 &amp; CSS3</div>
+      <div class="skills-line"><strong>Descomplica:</strong> Arquitetura de Computadores, DB Developer, Fundamentos de Programação, POO</div>
+    </section>
+
+    <section>
+      <h2>Idiomas</h2>
+      <div class="skills-line"><strong>Inglês:</strong> Intermediário / Técnico (leitura fluente de documentação)</div>
+      <div class="skills-line"><strong>Espanhol:</strong> Básico</div>
+    </section>
+  </div>
+
+  <p class="note">
+    Layout de uma coluna, sem tabelas ou caixas de texto — a ordem de leitura foi testada
+    extraindo o texto do PDF gerado para garantir que sistemas de recrutamento (ATS) leem
+    exatamente na ordem visual, do topo ao fim.
   </p>
-</section>
-
-<section>
-  <h2>Habilidades Técnicas</h2>
-  <div class="skills-line"><strong>Especialidade:</strong> JavaScript, TypeScript, React.js</div>
-  <div class="skills-line"><strong>Ecossistema Web &amp; Back-end:</strong> HTML5/CSS3, Angular, Vue.js, Node.js, NestJS, GraphQL, REST APIs</div>
-  <div class="skills-line"><strong>Dados &amp; IA Aplicados:</strong> Python, SQL, MongoDB, Data Lake, Agentes de IA, Cypress (E2E), ADVPL (Protheus)</div>
-</section>
-
-<section>
-  <h2>Experiência Profissional</h2>
-
-  <div class="entry">
-    <div class="entry-role">Desenvolvedor de Software (Estágio) — Haytek</div>
-    <span class="entry-period">Agosto/2025 - Presente</span>
-    <ul>
-      <li>Desenvolvimento de soluções web com foco no cliente final, priorizando interfaces dinâmicas, responsivas e performáticas com React.js, JavaScript e Angular.</li>
-      <li>Construção e manutenção de APIs RESTful com NestJS (Node.js) e TypeScript, integrando front-end e banco de dados.</li>
-      <li>Desenvolvimento de agentes de Inteligência Artificial para automação de processos operacionais internos.</li>
-      <li>Apoio à equipe de Data Lake com scripts em Python e consultas SQL para estruturação e análise de dados.</li>
-      <li>Integração com bancos de dados relacionais (SQL) e não-relacionais (MongoDB), além de integrações com o ERP Protheus via ADVPL.</li>
-    </ul>
-  </div>
-
-  <div class="entry">
-    <div class="entry-role">Desenvolvedor Full Stack (Freelancer / Fundador) — Selintech</div>
-    <span class="entry-period">Março/2026 - Presente</span>
-    <ul>
-      <li>Desenvolvimento de landing pages de alta conversão e performance, focadas em UX/UI e boas práticas de SEO.</li>
-      <li>Criação e implementação de plataformas completas de e-commerce, com integrações de meios de pagamento e sistemas de gestão.</li>
-      <li>Prospecção e projeto de sistemas personalizados sob demanda: levantamento de requisitos, arquitetura front/back-end e deploy final.</li>
-    </ul>
-  </div>
-
-  <div class="entry">
-    <div class="entry-role">Desenvolvedor Full Stack (Estágio) — Jovens Gênios</div>
-    <span class="entry-period">Outubro/2023 - Julho/2024</span>
-    <ul>
-      <li>Desenvolvimento de funcionalidades em React.js e Vue.js para plataformas educacionais gamificadas.</li>
-      <li>Implementação de testes automatizados de ponta a ponta (E2E) com Cypress, reduzindo a incidência de bugs em produção.</li>
-      <li>Manutenção de APIs com Node.js e GraphQL, otimizando o tempo de resposta das consultas e corrigindo bugs críticos.</li>
-    </ul>
-  </div>
-</section>
-
-<section>
-  <h2>Projetos</h2>
-
-  <div class="project-desc">
-    <span class="project-title">BarberSaaS</span> - Plataforma multi-tenant de gestão para barbearias (agenda, clientes, financeiro), com cobrança via WhatsApp e assinatura recorrente via Asaas. Next.js, TypeScript, Supabase. barber-selintech.vercel.app
-  </div>
-  <div class="project-desc">
-    <span class="project-title">Catálogo Comercial (Reino das Soleiras)</span> - E-commerce de serviços com vitrine pública e painel administrativo (CRUD, upload de imagens, autenticação). React, TypeScript, Supabase. reidassoleira.vercel.app
-  </div>
-</section>
-
-<section>
-  <h2>Educação Acadêmica</h2>
-  <div class="entry">
-    <div class="entry-role">Ciência da Computação (Bacharelado)</div>
-    <span class="entry-period">Out/2025 - Prev. Dez/2027 (Cursando)</span>
-  </div>
-  <div class="entry">
-    <div class="entry-role">Engenharia de Software (Pós-graduação)</div>
-    <span class="entry-period">Dez/2025 - Prev. Dez/2026 (Cursando)</span>
-  </div>
-  <div class="entry">
-    <div class="entry-role">Análise e Desenvolvimento de Sistemas (Tecnólogo)</div>
-    <span class="entry-period">Concluído em Out/2025</span>
-  </div>
-</section>
-
-<section>
-  <h2>Cursos Complementares</h2>
-  <div class="skills-line"><strong>Alura:</strong> JavaScript, React.js, Node.js, NestJS, Vue.js, HTML5 &amp; CSS3</div>
-  <div class="skills-line"><strong>Descomplica:</strong> Arquitetura de Computadores, DB Developer, Fundamentos de Programação, POO</div>
-</section>
-
-<section>
-  <h2>Idiomas</h2>
-  <div class="skills-line"><strong>Inglês:</strong> Intermediário / Técnico (leitura fluente de documentação)</div>
-  <div class="skills-line"><strong>Espanhol:</strong> Básico</div>
-</section>
+</div>
 
 </body>
 </html>
