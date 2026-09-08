@@ -2,9 +2,9 @@ import { useState } from "react";
 import { FaExternalLinkAlt, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { SectionHeading } from "../../styles/global";
 import { techIcons } from "../../utils/techIcons";
-import barberPainel from "../../assets/projects/barbersaas-painel.png";
-import barberAgenda from "../../assets/projects/barbersaas-agenda.png";
-import barberFinanceiro from "../../assets/projects/barbersaas-financeiro.png";
+import tudoBelezaPainel from "../../assets/projects/tudobeleza-painel.png";
+import tudoBelezaAgenda from "../../assets/projects/tudobeleza-agenda.png";
+import tudoBelezaFinanceiro from "../../assets/projects/tudobeleza-financeiro.png";
 import catalogoHome from "../../assets/projects/reidassoleira-home-shot.png";
 import catalogoGrid from "../../assets/projects/reidassoleira-catalogo-shot.png";
 import {
@@ -66,21 +66,21 @@ function ProjectGallery({ images }: { images: ProjectImage[] }) {
 
 const projects = [
     {
-        title: "BarberSaaS",
-        tagline: "Plataforma de gestão para barbearias",
+        title: "TudoBeleza",
+        tagline: "Agenda, comanda e financeiro para negócios de beleza",
         description:
-            "Tira a barbearia da planilha e do caderno: agenda, clientes e financeiro num só lugar, com cobrança automática via WhatsApp — o dono vê o faturamento do mês sem precisar somar nada na mão.",
+            "Organiza barbearias, salões, manicures e estúdios de trança em um só lugar: agenda online, comanda digital, financeiro, equipe e lembretes para o cliente.",
         highlights: [
-            "Cada barbearia com sua própria conta e dados isolados (multi-tenant)",
-            "Assinatura mensal recorrente com cobrança automática via Asaas (PIX + cartão)",
-            "Dashboard com faturamento, lucro e ticket médio em tempo real",
+            "Agenda com visão de dia, semana e mês, link público e próximo horário livre",
+            "Comanda digital com serviços, produtos, PIX, cartão, dinheiro e baixa automática de estoque",
+            "Financeiro com faturamento, lucro líquido, ticket médio, comissão e desempenho da equipe",
         ],
         tags: ["Next.js 16", "TypeScript", "Supabase", "Tailwind v4", "Zustand", "Asaas"],
-        link: "https://barber-selintech.vercel.app/",
+        link: "https://tudobeleza.selintech.com.br",
         images: [
-            { src: barberPainel, alt: "Painel do BarberSaaS com KPIs e cobranças pendentes" },
-            { src: barberAgenda, alt: "Agenda semanal do BarberSaaS" },
-            { src: barberFinanceiro, alt: "Tela financeira do BarberSaaS" },
+            { src: tudoBelezaPainel, alt: "Painel do TudoBeleza com KPIs e cobranças pendentes" },
+            { src: tudoBelezaAgenda, alt: "Agenda semanal do TudoBeleza" },
+            { src: tudoBelezaFinanceiro, alt: "Tela financeira do TudoBeleza" },
         ],
     },
     {
