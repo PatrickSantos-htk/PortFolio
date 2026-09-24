@@ -41,7 +41,7 @@ export function Contact() {
         <ContactContainer id="contact">
             <SectionHeading index="06">contato()</SectionHeading>
             <Intro>
-                Disponível para novas oportunidades e projetos freelancer. Rio de Janeiro, RJ.
+                Aberto a projetos freelancer, parcerias e boas conversas sobre tecnologia. Rio de Janeiro, RJ.
             </Intro>
 
             <ContactList>

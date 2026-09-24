@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { FaReact, FaNodeJs, FaVuejs, FaHtml5, FaMoneyBillWave, FaLayerGroup } from "react-icons/fa";
+import { FaReact, FaNodeJs, FaVuejs, FaHtml5, FaMoneyBillWave, FaLayerGroup, FaDocker, FaRobot, FaMarkdown } from "react-icons/fa";
 import {
     SiTypescript,
     SiJavascript,
@@ -9,6 +9,13 @@ import {
     SiNextdotjs,
     SiVite,
     SiReactrouter,
+    SiExpress,
+    SiGooglegemini,
+    SiMongodb,
+    SiJest,
+    SiReacthookform,
+    SiZod,
+    SiClaude,
 } from "react-icons/si";
 
 export const techIcons: Record<string, ReactNode> = {
@@ -28,4 +35,15 @@ export const techIcons: Record<string, ReactNode> = {
     NestJS: <SiNestjs size={16} />,
     "Vue.js": <FaVuejs size={16} />,
     "HTML5 & CSS3": <FaHtml5 size={16} />,
+    React: <FaReact size={16} />,
+    Express: <SiExpress size={16} />,
+    Gemini: <SiGooglegemini size={16} />,
+    MongoDB: <SiMongodb size={16} />,
+    Docker: <FaDocker size={16} />,
+    Jest: <SiJest size={16} />,
+    "React Hook Form": <SiReacthookform size={16} />,
+    Zod: <SiZod size={16} />,
+    "Claude Skills": <SiClaude size={16} />,
+    "IA aplicada": <FaRobot size={16} />,
+    Markdown: <FaMarkdown size={16} />,
 };

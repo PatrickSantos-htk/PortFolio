@@ -56,10 +56,10 @@ export const Shot = styled.img`
   display: block;
 `;
 
-export const NavButton = styled.button<{ side: "left" | "right" }>`
+export const NavButton = styled.button<{ $side: "left" | "right" }>`
   position: absolute;
   top: 50%;
-  ${({ side }) => (side === "left" ? "left: 0.6rem;" : "right: 0.6rem;")}
+  ${({ $side }) => ($side === "left" ? "left: 0.6rem;" : "right: 0.6rem;")}
   transform: translateY(-50%);
   width: 30px;
   height: 30px;
@@ -206,4 +206,81 @@ export const FooterButton = styled.a`
   &:hover {
     opacity: 0.75;
   }
+`;
+
+export const Links = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  margin-top: 0.25rem;
+`;
+
+export const SubHeading = styled.h3`
+  margin: 3.5rem 0 0.5rem;
+  font-size: 1.1rem;
+  color: ${({ theme }) => theme.colors.text};
+
+  &::before {
+    content: "$ ls ";
+    color: ${({ theme }) => theme.colors.secondary};
+    font-weight: 400;
+  }
+`;
+
+export const SubIntro = styled.p`
+  font-size: 0.9rem;
+  color: ${({ theme }) => theme.colors.textMuted};
+  margin-bottom: 1.5rem;
+`;
+
+export const MiniGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+
+  @media (max-width: 760px) {
+    grid-template-columns: 1fr;
+  }
+`;
+
+export const MiniCard = styled.article`
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  background: ${({ theme }) => theme.colors.card};
+  border: 1px solid ${({ theme }) => theme.colors.border};
+  border-radius: 12px;
+  padding: 1.4rem;
+  transition: border-color 0.2s, transform 0.2s;
+
+  &:hover {
+    border-color: ${({ theme }) => theme.colors.primary};
+    transform: translateY(-2px);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: border-color 0.2s;
+    &:hover {
+      transform: none;
+    }
+  }
+`;
+
+export const MiniKind = styled.span`
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: ${({ theme }) => theme.colors.secondary};
+`;
+
+export const MiniTitle = styled.h4`
+  font-size: 1.05rem;
+  color: ${({ theme }) => theme.colors.text};
+`;
+
+export const MiniDescription = styled.p`
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: ${({ theme }) => theme.colors.textMuted};
+  flex: 1;
 `;
