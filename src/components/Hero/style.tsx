@@ -49,7 +49,14 @@ export const Meta = styled.p`
   color: ${({ theme }) => theme.colors.textMuted};
 
   @media (max-width: 900px) {
-    justify-content: center;
+    display: block;
+    text-align: center;
+
+    .dot {
+      display: inline-block;
+      margin-right: 0.5rem;
+      vertical-align: middle;
+    }
   }
 
   .dot {

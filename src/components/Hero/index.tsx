@@ -28,9 +28,9 @@ export function Hero() {
                 <ReactTyped
                     strings={[
                         "Desenvolvedor Full Stack",
-                        "Especialista em React & JavaScript",
+                        "React, Next.js & Node.js",
                         "Fundador @ Selintech",
-                        "Criador de agentes de IA",
+                        "Agentes de IA aplicada",
                     ]}
                     typeSpeed={55}
                     backSpeed={30}
@@ -40,8 +40,8 @@ export function Hero() {
                 />
 
                 <Meta>
-                    <span className="dot" />
-                    Rio de Janeiro, RJ · disponível para novos projetos
+                    <span className="dot" aria-hidden="true" />
+                    <span>Rio de Janeiro, RJ · disponível para novos projetos</span>
                 </Meta>
 
                 <Actions>
